@@ -1,8 +1,9 @@
-package edu.jabs.bookstore.test;
+package bookstore;
 
 import junit.framework.TestCase;
-import edu.jabs.bookstore.domain.Book;
-import edu.jabs.bookstore.domain.PurchaseItem;
+
+import bookstore.domain.Book;
+import bookstore.domain.PurchaseItem;
 
 /**
  * Purchase item test class

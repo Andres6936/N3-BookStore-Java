@@ -1,11 +1,12 @@
-package edu.jabs.bookstore.test;
-
-import java.util.ArrayList;
+package bookstore;
 
 import junit.framework.TestCase;
-import edu.jabs.bookstore.domain.Book;
-import edu.jabs.bookstore.domain.PurchaseItem;
-import edu.jabs.bookstore.domain.ShoppingCart;
+
+import bookstore.domain.Book;
+import bookstore.domain.PurchaseItem;
+import bookstore.domain.ShoppingCart;
+
+import java.util.ArrayList;
 
 /**
  * Shopping cart test class

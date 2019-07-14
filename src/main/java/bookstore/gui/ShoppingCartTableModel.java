@@ -1,13 +1,12 @@
-package edu.jabs.bookstore.gui;
+package bookstore.gui;
 
-import java.text.DecimalFormat;
-import java.text.NumberFormat;
+import bookstore.domain.Book;
+import bookstore.domain.PurchaseItem;
+import bookstore.domain.ShoppingCart;
 
 import javax.swing.table.AbstractTableModel;
-
-import edu.jabs.bookstore.domain.Book;
-import edu.jabs.bookstore.domain.PurchaseItem;
-import edu.jabs.bookstore.domain.ShoppingCart;
+import java.text.DecimalFormat;
+import java.text.NumberFormat;
 
 /**
  * table model for the shopping cart

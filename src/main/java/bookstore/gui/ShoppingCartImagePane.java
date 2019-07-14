@@ -1,27 +1,15 @@
-package edu.jabs.bookstore.gui;
+package bookstore.gui;
 
-import java.awt.BorderLayout;
-import java.awt.Color;
-import java.awt.Dimension;
-import java.awt.GridLayout;
+import bookstore.domain.PurchaseItem;
+import bookstore.domain.ShoppingCart;
+
+import javax.swing.*;
+import javax.swing.border.EmptyBorder;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.text.DecimalFormat;
 import java.text.NumberFormat;
-
-import javax.swing.BorderFactory;
-import javax.swing.JButton;
-import javax.swing.JLabel;
-import javax.swing.JOptionPane;
-import javax.swing.JPanel;
-import javax.swing.JScrollPane;
-import javax.swing.JTable;
-import javax.swing.JTextField;
-import javax.swing.SwingConstants;
-import javax.swing.border.EmptyBorder;
-
-import edu.jabs.bookstore.domain.PurchaseItem;
-import edu.jabs.bookstore.domain.ShoppingCart;
 
 /**
  * Shopping cart image pane

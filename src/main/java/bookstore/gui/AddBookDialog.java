@@ -1,13 +1,7 @@
-package edu.jabs.bookstore.gui;
+package bookstore.gui;
 
-import java.awt.Dimension;
-import java.awt.GridLayout;
-
-import javax.swing.JDialog;
-import javax.swing.JLabel;
-import javax.swing.JOptionPane;
-import javax.swing.JPanel;
-import javax.swing.JTextField;
+import javax.swing.*;
+import java.awt.*;
 
 /**
  * Form used to add a new book to the catalog

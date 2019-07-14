@@ -1,4 +1,4 @@
-package edu.jabs.bookstore.domain;
+package bookstore.domain;
 
 import java.util.ArrayList;
 

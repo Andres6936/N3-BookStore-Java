@@ -1,19 +1,12 @@
-package edu.jabs.bookstore.gui;
+package bookstore.gui;
 
-import java.awt.BorderLayout;
-import java.awt.Component;
-import java.awt.Dimension;
-import java.awt.Point;
-import java.awt.Toolkit;
+import bookstore.domain.Book;
+import bookstore.domain.BookStore;
+import bookstore.domain.PurchaseItem;
+import bookstore.domain.ShoppingCart;
 
-import javax.swing.JFrame;
-import javax.swing.JOptionPane;
-import javax.swing.JPanel;
-
-import edu.jabs.bookstore.domain.Book;
-import edu.jabs.bookstore.domain.BookStore;
-import edu.jabs.bookstore.domain.PurchaseItem;
-import edu.jabs.bookstore.domain.ShoppingCart;
+import javax.swing.*;
+import java.awt.*;
 
 /**
  * Main gui window

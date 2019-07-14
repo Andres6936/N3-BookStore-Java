@@ -1,12 +1,11 @@
-package edu.jabs.bookstore.gui;
+package bookstore.gui;
 
-import java.text.DecimalFormat;
-import java.text.NumberFormat;
+import bookstore.domain.Book;
+import bookstore.domain.BookStore;
 
 import javax.swing.table.AbstractTableModel;
-
-import edu.jabs.bookstore.domain.Book;
-import edu.jabs.bookstore.domain.BookStore;
+import java.text.DecimalFormat;
+import java.text.NumberFormat;
 
 /**
  * Data model from the catalog used to display the tables

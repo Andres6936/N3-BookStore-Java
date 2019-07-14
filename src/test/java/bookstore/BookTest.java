@@ -1,7 +1,8 @@
-package edu.jabs.bookstore.test;
+package bookstore;
 
 import junit.framework.TestCase;
-import edu.jabs.bookstore.domain.Book;
+
+import bookstore.domain.Book;
 
 /**
  * Book test class

@@ -1,4 +1,4 @@
-package edu.jabs.bookstore.domain;
+package bookstore.domain;
 /**
  * Shopping cart item. it is composed of a book and an amount
  */
