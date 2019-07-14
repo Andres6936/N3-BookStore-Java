@@ -64,6 +64,18 @@ public class BookStoreGUI extends JFrame
         store = new BookStore( );
         shoppingCart = store.getShoppingCart( );
 
+        try
+        {
+            UIManager.setLookAndFeel("javax.swing.plaf.nimbus.NimbusLookAndFeel");
+        }
+        catch ( ClassNotFoundException |
+                InstantiationException |
+                IllegalAccessException |
+                UnsupportedLookAndFeelException e )
+        {
+            e.printStackTrace( );
+        }
+
         JPanel upperImagePane = new JPanel( new BorderLayout( ) );
         catalogImagePane = new CatalogImagePane( this, store );
         buttonsImagePane = new CatalogButtonsImagePane( this );
