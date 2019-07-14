@@ -24,6 +24,7 @@ public class BookStore
     // -----------------------------------------------------------------
     // Constructors
     // -----------------------------------------------------------------
+
     /**
      * Creates the bookstore with an empty catalog and shopping cart
      */
