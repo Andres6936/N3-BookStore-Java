@@ -8,6 +8,7 @@ public class Book
     // -----------------------------------------------------------------
     // Attributes
     // -----------------------------------------------------------------
+
     /** Book title */
     private String title;
 
@@ -20,6 +21,7 @@ public class Book
     // -----------------------------------------------------------------
     // Constructors
     // -----------------------------------------------------------------
+
     /**
      * Creates the book with its most basic information: title, ISBN and price.
      * @param aTitle Book title. aTitle!= null.
@@ -71,8 +73,7 @@ public class Book
      */
     public boolean sameBook( String otherISBN )
     {
-        boolean same = isbn.equals( otherISBN );
-        return same;
+        return isbn.equals( otherISBN );
     }
 
 }
