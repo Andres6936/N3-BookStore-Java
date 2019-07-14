@@ -44,8 +44,8 @@ public class CatalogButtonsImagePane extends JPanel implements ActionListener
     /**
      * Instance for the main GUI class
      */
-
     private BookStoreGUI mainWindow;
+
     // -----------------------------------------------------------------
     // Constructors
     // -----------------------------------------------------------------

@@ -36,7 +36,7 @@ public class BookStoreGUI extends JFrame
     /**
      * Dialog frame used to add a new book to the catalog
      */
-    private AddBookDialog addBook;
+    private AddBookDialog addBookDialog;
 
     // -----------------------------------------------------------------
     // Attributes
@@ -44,7 +44,7 @@ public class BookStoreGUI extends JFrame
     /**
      * Shopping cart
      */
-    private ShoppingCart cart;
+    private ShoppingCart shoppingCart;
 
     /**
      * Bookstore
@@ -62,7 +62,7 @@ public class BookStoreGUI extends JFrame
     {
 
         store = new BookStore( );
-        cart = store.getShoppingCart( );
+        shoppingCart = store.getShoppingCart( );
 
         JPanel upperImagePane = new JPanel( new BorderLayout( ) );
         catalogImagePane = new CatalogImagePane( this, store );
@@ -71,10 +71,10 @@ public class BookStoreGUI extends JFrame
         upperImagePane.add( catalogImagePane, BorderLayout.CENTER );
 
         JPanel bottomImagePane = new JPanel( new BorderLayout( ) );
-        cartImagePane = new ShoppingCartImagePane( this, cart );
+        cartImagePane = new ShoppingCartImagePane( this, shoppingCart );
         bottomImagePane.add( cartImagePane, BorderLayout.CENTER );
 
-        addBook = new AddBookDialog( this );
+        addBookDialog = new AddBookDialog( this );
         setPreferredSize( new Dimension( 500, 500 ) );
 
         add( upperImagePane, BorderLayout.NORTH );
@@ -98,9 +98,9 @@ public class BookStoreGUI extends JFrame
      */
     public void addBook( )
     {
-        addBook.setLocation( calculaPosicionCentral( this, addBook ) );
-        addBook.setVisible( true );
-        addBook.setModal( true );
+        addBookDialog.setLocation( calculaPosicionCentral( this, addBookDialog ) );
+        addBookDialog.setModalityType(Dialog.DEFAULT_MODALITY_TYPE);
+        addBookDialog.setVisible( true );
     }
 
     /**
@@ -139,9 +139,9 @@ public class BookStoreGUI extends JFrame
     {
         if( amount != 0 )
         {
-            cart.addPurchase( bookToPurchase, amount );
+            shoppingCart.addPurchase( bookToPurchase, amount );
             cartImagePane.updateCart( );
-            cartImagePane.setAmount( cart.calculateTotalPurchaseValue( ) );
+            cartImagePane.setAmount( shoppingCart.calculateTotalPurchaseValue( ) );
         }
     }
 
@@ -151,9 +151,9 @@ public class BookStoreGUI extends JFrame
      */
     public void deletePurchase( PurchaseItem itemToDelete )
     {
-        cart.deletePurchaseItem( itemToDelete );
+        shoppingCart.deletePurchaseItem( itemToDelete );
         cartImagePane.updateCart( );
-        cartImagePane.setAmount( cart.calculateTotalPurchaseValue( ) );
+        cartImagePane.setAmount( shoppingCart.calculateTotalPurchaseValue( ) );
     }
 
     /**

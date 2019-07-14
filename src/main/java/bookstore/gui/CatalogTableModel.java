@@ -19,7 +19,7 @@ public class CatalogTableModel extends AbstractTableModel
     /**
      * Column titles
      */
-    private String[] columnNames;
+    private String[] columnNames = new String[]{ "ISBN", "Title", "Price" };
 
     /**
      * Bookstore
@@ -38,8 +38,6 @@ public class CatalogTableModel extends AbstractTableModel
     {
         super( );
         store = aStore;
-        String[] auxColumnNames = { "ISBN", "Title", "Price" };
-        columnNames = auxColumnNames;
     }
 
     // -----------------------------------------------------------------
