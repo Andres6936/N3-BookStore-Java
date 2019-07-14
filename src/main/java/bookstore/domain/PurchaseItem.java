@@ -81,8 +81,7 @@ public class PurchaseItem
      */
     public boolean sameAsItem( PurchaseItem otherItem )
     {
-        boolean same = book.sameBook( otherItem.getIsbnItem( ) );
-        return same;
+        return book.sameBook( otherItem.getIsbnItem( ) );
     }
 
     /**
@@ -91,7 +90,6 @@ public class PurchaseItem
      */
     public int calculateTotalItem( )
     {
-        int total = book.getPrice( ) * amount;
-        return total;
+        return book.getPrice( ) * amount;
     }
 }

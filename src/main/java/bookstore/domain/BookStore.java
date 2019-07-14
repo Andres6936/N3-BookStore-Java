@@ -19,7 +19,7 @@ public class BookStore
     /**
      * Book shopping cart
      */
-    private ShoppingCart cart;
+    private ShoppingCart shoppingCart;
 
     // -----------------------------------------------------------------
     // Constructors
@@ -31,7 +31,7 @@ public class BookStore
     public BookStore( )
     {
         catalog = new ArrayList( );
-        cart = new ShoppingCart( );
+        shoppingCart = new ShoppingCart( );
     }
 
     // -----------------------------------------------------------------
@@ -58,7 +58,7 @@ public class BookStore
      */
     public void createNewCart( )
     {
-        cart = new ShoppingCart( );
+        shoppingCart = new ShoppingCart( );
     }
 
     /**
@@ -76,7 +76,7 @@ public class BookStore
      */
     public ShoppingCart getShoppingCart( )
     {
-        return cart;
+        return shoppingCart;
     }
 
     /**
