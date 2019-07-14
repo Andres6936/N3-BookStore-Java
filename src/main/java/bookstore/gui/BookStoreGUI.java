@@ -79,10 +79,14 @@ public class BookStoreGUI extends JFrame
 
         add( upperImagePane, BorderLayout.NORTH );
         add( bottomImagePane, BorderLayout.CENTER );
+
         setTitle( "Bookstore" );
-        pack( );
         setResizable( false );
         setDefaultCloseOperation( JFrame.EXIT_ON_CLOSE );
+
+        // Center the window.
+        pack( );
+        setLocationRelativeTo( null );
     }
 
     // -----------------------------------------------------------------
