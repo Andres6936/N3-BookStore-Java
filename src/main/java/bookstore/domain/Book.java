@@ -1,12 +1,8 @@
 package bookstore.domain;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-
 /**
  * Book in the book store
  */
-@Entity
 public class Book
 {
     // -----------------------------------------------------------------
@@ -17,7 +13,6 @@ public class Book
     private String title;
 
     /** ISBN for the book */
-    @Id
     private String isbn;
 
     /** Book price */
