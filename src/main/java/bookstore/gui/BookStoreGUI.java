@@ -5,8 +5,18 @@ import bookstore.domain.BookStore;
 import bookstore.domain.PurchaseItem;
 import bookstore.domain.ShoppingCart;
 
-import javax.swing.*;
-import java.awt.*;
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.UIManager;
+import javax.swing.UnsupportedLookAndFeelException;
+
+import java.awt.BorderLayout;
+import java.awt.Component;
+import java.awt.Dialog;
+import java.awt.Dimension;
+import java.awt.Point;
+import java.awt.Toolkit;
 
 /**
  * Main gui window
@@ -226,26 +236,5 @@ public class BookStoreGUI extends JFrame
     {
         String answer = store.method2( );
         JOptionPane.showMessageDialog( this, answer, "Option 2", JOptionPane.INFORMATION_MESSAGE );
-    }
-
-    // -----------------------------------------------------------------
-    // Execution
-    // -----------------------------------------------------------------
-
-    /**
-     * Main execution method
-     * @param args Arguments for the application, not used
-     */
-    public static void main( String[] args )
-    {
-        try
-        {
-            BookStoreGUI gui = new BookStoreGUI( );
-            gui.setVisible( true );
-        }
-        catch( Exception e )
-        {
-            e.printStackTrace( );
-        }
     }
 }

@@ -11,4 +11,4 @@ dependencies {
     testImplementation 'junit:junit:4.12'
 }
 
-mainClassName = 'bookstore.gui.BookStoreGUI'
+mainClassName = 'bookstore.view.desktop.javafx.BookStoreFX'
