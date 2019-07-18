@@ -24,7 +24,13 @@ public class BookStoreFX extends Application
     @Override
     public void start( Stage stage ) throws Exception
     {
-        Group rootGroup = new Group( new PanelCatalogBookOption() );
+        VBox layout = new VBox( new PanelCatalogBookOption( ),
+                                new PanelCatalogBook( ) );
+
+        layout.setPrefHeight( 500 );
+        layout.setPrefWidth( 500 );
+
+        Group rootGroup = new Group( layout );
 
         Scene scene = new Scene( rootGroup, 500, 500 );
 
