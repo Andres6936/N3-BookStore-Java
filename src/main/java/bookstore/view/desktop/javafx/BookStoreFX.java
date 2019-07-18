@@ -25,7 +25,8 @@ public class BookStoreFX extends Application
     public void start( Stage stage ) throws Exception
     {
         VBox layout = new VBox( new PanelCatalogBookOption( ),
-                                new PanelCatalogBook( ) );
+                                new PanelCatalogBook( ),
+                                new PanelCatalogBookBuy( ) );
 
         layout.setPrefHeight( 500 );
         layout.setPrefWidth( 500 );
