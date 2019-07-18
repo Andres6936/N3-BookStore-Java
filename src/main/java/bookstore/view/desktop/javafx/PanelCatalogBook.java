@@ -8,11 +8,11 @@ import javafx.scene.layout.Pane;
 
 public class PanelCatalogBook extends Pane
 {
-    private TableView tableView;
+    private TableView< Book > tableView;
 
-    private TableColumn columnISBN;
-    private TableColumn columnTitle;
-    private TableColumn columnPrice;
+    private TableColumn< Book, String > columnISBN;
+    private TableColumn< Book, String > columnTitle;
+    private TableColumn< Book, String > columnPrice;
 
     public PanelCatalogBook( )
     {
@@ -26,14 +26,14 @@ public class PanelCatalogBook extends Pane
         tableView.setPrefHeight( 180 );
         tableView.setPrefWidth( 480 );
 
-        columnISBN = new TableColumn< Book, String >( "ISBN" );
+        columnISBN = new TableColumn<>( "ISBN" );
         configurationStyleColumn( columnISBN, 140 );
 
 
-        columnTitle = new TableColumn< Book, String >( "Title" );
+        columnTitle = new TableColumn<>( "Title" );
         configurationStyleColumn( columnTitle, 230 );
 
-        columnPrice = new TableColumn< Book, String >( "Price" );
+        columnPrice = new TableColumn<>( "Price" );
         configurationStyleColumn( columnPrice, 110 );
 
         tableView.getColumns( ).add( columnISBN );
@@ -43,7 +43,7 @@ public class PanelCatalogBook extends Pane
         getChildren( ).add( tableView );
     }
 
-    private static void configurationStyleColumn( TableColumn column,
+    private static void configurationStyleColumn( TableColumn< Book, String > column,
                                                   final double width )
     {
         column.setEditable( false );
