@@ -43,8 +43,8 @@ public class PanelCatalogBook extends Pane
         getChildren( ).add( tableView );
     }
 
-    private static void configurationStyleColumn( TableColumn< Book, String > column,
-                                                  final double width )
+    private static void configurationStyleColumn(
+            TableColumn< Book, String > column, final double width )
     {
         column.setEditable( false );
         column.setResizable( false );
