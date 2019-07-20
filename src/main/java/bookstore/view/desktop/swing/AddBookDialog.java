@@ -1,4 +1,4 @@
-package bookstore.gui;
+package bookstore.view.desktop.swing;
 
 import javax.swing.*;
 import java.awt.*;
@@ -49,7 +49,7 @@ public class AddBookDialog extends JDialog
     /**
      * Main GUI
      */
-    private BookStoreGUI mainWindow;
+    private BookStoreSwing mainWindow;
 
     // -----------------------------------------------------------------
     // Constructors
@@ -59,7 +59,7 @@ public class AddBookDialog extends JDialog
      * Creates the form used to add books
      * @param window mainWindow. window != null.
      */
-    public AddBookDialog( BookStoreGUI window )
+    public AddBookDialog( BookStoreSwing window )
     {
         mainWindow = window;
 

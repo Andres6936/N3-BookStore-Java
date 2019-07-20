@@ -1,4 +1,4 @@
-package bookstore.gui;
+package bookstore.view.desktop.swing;
 
 import bookstore.domain.Book;
 import bookstore.domain.BookStore;

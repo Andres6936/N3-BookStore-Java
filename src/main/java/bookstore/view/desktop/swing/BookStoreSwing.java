@@ -1,9 +1,10 @@
-package bookstore.gui;
+package bookstore.view.desktop.swing;
 
 import bookstore.domain.Book;
 import bookstore.domain.BookStore;
 import bookstore.domain.PurchaseItem;
 import bookstore.domain.ShoppingCart;
+import bookstore.view.desktop.IBookStoreUI;
 
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
@@ -21,7 +22,7 @@ import java.awt.Toolkit;
 /**
  * Main gui window
  */
-public class BookStoreGUI extends JFrame
+public class BookStoreSwing extends JFrame implements IBookStoreUI
 {
 
     // -----------------------------------------------------------------
@@ -68,7 +69,7 @@ public class BookStoreGUI extends JFrame
     /**
      * Creates the main window for the bookstore
      */
-    public BookStoreGUI( )
+    public BookStoreSwing( )
     {
 
         store = new BookStore( );
@@ -236,5 +237,15 @@ public class BookStoreGUI extends JFrame
     {
         String answer = store.method2( );
         JOptionPane.showMessageDialog( this, answer, "Option 2", JOptionPane.INFORMATION_MESSAGE );
+    }
+
+    // -----------------------------------------------------------------
+    // Start the magic
+    // -----------------------------------------------------------------
+
+    @Override
+    public void abracadabra( String[] args )
+    {
+        setVisible( true );
     }
 }

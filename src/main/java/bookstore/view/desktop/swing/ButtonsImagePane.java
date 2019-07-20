@@ -1,4 +1,4 @@
-package bookstore.gui;
+package bookstore.view.desktop.swing;
 
 import javax.swing.*;
 import java.awt.*;

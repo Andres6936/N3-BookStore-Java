@@ -1,23 +1,37 @@
 package bookstore;
 
-import bookstore.gui.BookStoreGUI;
+import bookstore.view.desktop.IBookStoreUI;
+import bookstore.view.desktop.javafx.BookStoreFX;
+import bookstore.view.desktop.swing.BookStoreSwing;
 
 public class Main
 {
+    private static IBookStoreUI application;
+
     /**
-     * Main execution method
-     * @param args The command line arguments
+     * Main execution method.
+     * @param args The command line arguments.
      */
     public static void main( String[] args )
     {
-        try
+        if ( args.length > 0 )
         {
-            BookStoreGUI gui = new BookStoreGUI( );
-            gui.setVisible( true );
+            if ( args[ 0 ].equals( "-Swing" ) )
+            {
+                application = new BookStoreSwing( );
+            }
+            else if ( args[ 0 ].equals( "-JavaFX" ) )
+            {
+                application = new BookStoreFX( );
+            }
         }
-        catch( Exception e )
+        else
         {
-            e.printStackTrace( );
+            System.out.println( "Please, Choice UI:" );
+            System.out.println( "-Swing: Run Swing Application" );
+            System.out.println( "-JavaFX: Run JavaFX Application" );
         }
+
+        application.abracadabra( args );
     }
 }

@@ -1,4 +1,4 @@
-package bookstore.gui;
+package bookstore.view.desktop.swing;
 
 import bookstore.domain.PurchaseItem;
 import bookstore.domain.ShoppingCart;
@@ -62,7 +62,7 @@ public class ShoppingCartImagePane extends JPanel implements ActionListener
     /**
      * Main GUI
      */
-    private BookStoreGUI mainwindow;
+    private BookStoreSwing mainwindow;
 
     // -----------------------------------------------------------------
     // Constructors
@@ -73,7 +73,7 @@ public class ShoppingCartImagePane extends JPanel implements ActionListener
      * @param aWindow Main window. aWindow != null.
      * @param aCart Main shopping cart. aCart != null.
      */
-    public ShoppingCartImagePane( BookStoreGUI aWindow, ShoppingCart aCart )
+    public ShoppingCartImagePane( BookStoreSwing aWindow, ShoppingCart aCart )
     {
         mainwindow = aWindow;
 

@@ -1,4 +1,4 @@
-package bookstore.gui;
+package bookstore.view.desktop.swing;
 
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
@@ -44,7 +44,7 @@ public class CatalogButtonsImagePane extends JPanel implements ActionListener
     /**
      * Instance for the main GUI class
      */
-    private BookStoreGUI mainWindow;
+    private BookStoreSwing mainWindow;
 
     // -----------------------------------------------------------------
     // Constructors
@@ -54,7 +54,7 @@ public class CatalogButtonsImagePane extends JPanel implements ActionListener
      * Creates the operations image pane.
      * @param window Main window. window != null.
      */
-    public CatalogButtonsImagePane( BookStoreGUI window )
+    public CatalogButtonsImagePane( BookStoreSwing window )
     {
         setBorder( new EmptyBorder( 5, 5, 5, 5 ) );
         setLayout( new GridLayout( 1, 3, 8, 1 ) );

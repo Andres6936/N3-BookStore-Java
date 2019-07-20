@@ -1,12 +1,13 @@
 package bookstore.view.desktop.javafx;
 
+import bookstore.view.desktop.IBookStoreUI;
 import javafx.application.Application;
 import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
-public class BookStoreFX extends Application
+public class BookStoreFX extends Application implements IBookStoreUI
 {
 
     @Override
@@ -31,7 +32,12 @@ public class BookStoreFX extends Application
         stage.show();
     }
 
-    public static void main( String[] args )
+    // -----------------------------------------------------------------
+    // Start the magic
+    // -----------------------------------------------------------------
+
+    @Override
+    public void abracadabra( String[] args )
     {
         launch( args );
     }

@@ -1,5 +1,7 @@
 plugins {
+    // The Java plugin adds Java compilation along with testing and bundling capabilities to a project.
     id 'java'
+    // The Application plugin facilitates creating an executable JVM application.
     id 'application'
 }
 
@@ -11,4 +13,11 @@ dependencies {
     testImplementation 'junit:junit:4.12'
 }
 
-mainClassName = 'bookstore.view.desktop.javafx.BookStoreFX'
+run {
+    if (project.hasProperty('runArgs'))
+    {
+        args findProperty('runArgs')
+    }
+}
+
+mainClassName = 'bookstore.Main'

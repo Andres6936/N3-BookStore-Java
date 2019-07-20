@@ -1,4 +1,4 @@
-package bookstore.gui;
+package bookstore.view.desktop.swing;
 
 import bookstore.domain.Book;
 import bookstore.domain.BookStore;
@@ -46,7 +46,7 @@ public class CatalogImagePane extends JPanel implements ActionListener
     /**
      * Main GUI class
      */
-    private BookStoreGUI mainwindow;
+    private BookStoreSwing mainwindow;
 
     /**
      * Buy book button
@@ -73,7 +73,7 @@ public class CatalogImagePane extends JPanel implements ActionListener
      * @param store Book store to display. store != null.
      */
 
-    public CatalogImagePane( BookStoreGUI gui, BookStore store )
+    public CatalogImagePane( BookStoreSwing gui, BookStore store )
     {
         mainwindow = gui;
 
