@@ -6,7 +6,7 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.layout.Pane;
 
-public class PanelCatalogBook extends Pane
+public class PanelCatalogBookTable extends Pane
 {
     private TableView< Book > tableView;
 
@@ -14,7 +14,7 @@ public class PanelCatalogBook extends Pane
     private TableColumn< Book, String > columnTitle;
     private TableColumn< Book, String > columnPrice;
 
-    public PanelCatalogBook( )
+    public PanelCatalogBookTable( )
     {
         setPrefHeight( 190 );
         setPrefWidth( 500 );

@@ -5,7 +5,7 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.layout.Pane;
 
-public class PanelShoppingCart extends Pane
+public class PanelShoppingCartTable extends Pane
 {
     TableView< ShoppingCart > tableView;
 
@@ -14,7 +14,7 @@ public class PanelShoppingCart extends Pane
     TableColumn< ShoppingCart, String > columnAmount;
     TableColumn< ShoppingCart, String > columnSubtotal;
 
-    public PanelShoppingCart( )
+    public PanelShoppingCartTable( )
     {
         setPrefHeight( 190 );
         setPrefWidth( 500 );
