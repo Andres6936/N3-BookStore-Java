@@ -12,7 +12,7 @@ public class ShoppingCart
     // -----------------------------------------------------------------
 
     /** list of shopping items added on the shopping cart*/
-    private ArrayList shoppingItems;
+    private ArrayList< PurchaseItem > shoppingItems;
 
     // -----------------------------------------------------------------
     // Constructors
@@ -23,7 +23,7 @@ public class ShoppingCart
      */
     public ShoppingCart( )
     {
-        shoppingItems = new ArrayList( );
+        shoppingItems = new ArrayList<>( );
     }
 
     // -----------------------------------------------------------------
@@ -46,7 +46,7 @@ public class ShoppingCart
         // as long as the item isnt found or the whole container has been checked, continue
         while( i < totalItems && !found )
         {
-            item = ( PurchaseItem )shoppingItems.get( i );
+            item = shoppingItems.get( i );
             if( item.getBook( ).sameBook( isbnConsulted ) )
                 found = true;
             i++;
@@ -111,7 +111,7 @@ public class ShoppingCart
      * Returns the list of purchase items.
      * @return List of purchase items.
      */
-    public ArrayList getShoppingList( )
+    public ArrayList< PurchaseItem > getShoppingList( )
     {
         return shoppingItems;
     }

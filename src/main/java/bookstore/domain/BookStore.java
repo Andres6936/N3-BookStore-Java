@@ -14,7 +14,7 @@ public class BookStore
     /**
      * Catalog or book lists
      */
-    private ArrayList catalog;
+    private ArrayList< Book > catalog;
 
     /**
      * Book shopping cart
@@ -30,7 +30,7 @@ public class BookStore
      */
     public BookStore( )
     {
-        catalog = new ArrayList( );
+        catalog = new ArrayList<>( );
         shoppingCart = new ShoppingCart( );
     }
 
@@ -65,7 +65,7 @@ public class BookStore
      * Returns the store catalog. <br>
      * @return store catalog.
      */
-    public ArrayList getCatalog( )
+    public ArrayList< Book > getCatalog( )
     {
         return catalog;
     }
@@ -92,7 +92,7 @@ public class BookStore
         boolean found = false;
         while( index < totalBooks && !found )
         {
-            foundBook = ( Book )catalog.get( index );
+            foundBook = catalog.get( index );
             if( foundBook.sameBook( isbn ) )
                 found = true;
             index++;
