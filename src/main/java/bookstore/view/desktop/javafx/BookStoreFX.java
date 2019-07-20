@@ -27,7 +27,8 @@ public class BookStoreFX extends Application
         VBox layout = new VBox( new PanelCatalogBookOption( ),
                                 new PanelCatalogBook( ),
                                 new PanelCatalogBookBuy( ),
-                                new PanelShoppingCart( ) );
+                                new PanelShoppingCart( ),
+                                new PanelShoppingCartOption( ) );
 
         layout.setPrefHeight( 500 );
         layout.setPrefWidth( 500 );
