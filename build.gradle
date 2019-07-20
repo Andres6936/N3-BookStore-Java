@@ -13,11 +13,7 @@ dependencies {
     testImplementation 'junit:junit:4.12'
 }
 
-run {
-    if (project.hasProperty('runArgs'))
-    {
-        args findProperty('runArgs')
-    }
+// Configure the application main class
+application {
+    mainClassName = 'bookstore.Main' 
 }
-
-mainClassName = 'bookstore.Main'
