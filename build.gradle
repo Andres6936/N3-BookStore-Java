@@ -43,5 +43,20 @@ dependencies {
 
 application {
     // Configure the application main class.
-    mainClassName = 'bookstore.Main' 
+    mainClassName = 'bookstore.Main'
+}
+
+// Executes a Java application in a child process.
+// ...
+// Type: JavaExec -> Starts a JVM with the given classpath and
+// application class (with the method main).
+// ...
+// Overwrite the task run.
+task run(type: JavaExec, overwrite: true) {
+    
+    // Configure the application classpath.
+    classpath = sourceSets.main.runtimeClasspath
+    
+    // Configure the application main class.
+    main = 'bookstore.Main'
 }

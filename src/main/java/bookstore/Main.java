@@ -14,7 +14,13 @@ public class Main
      */
     public static void main( String[] args )
     {
-        if ( args.length > 0 )
+        if ( args.length == 0 )
+        {
+            System.out.println( "\nPlease, Choice User Interface:\n" );
+            System.out.println( "-Swing: Run Swing Application" );
+            System.out.println( "-JavaFX: Run JavaFX Application" );
+        }
+        else
         {
             if ( args[ 0 ].equals( "-Swing" ) )
             {
@@ -24,14 +30,8 @@ public class Main
             {
                 application = new BookStoreFX( );
             }
-        }
-        else
-        {
-            System.out.println( "Please, Choice UI:" );
-            System.out.println( "-Swing: Run Swing Application" );
-            System.out.println( "-JavaFX: Run JavaFX Application" );
-        }
 
-        application.abracadabra( args );
+            application.abracadabra( args );
+        }
     }
 }
