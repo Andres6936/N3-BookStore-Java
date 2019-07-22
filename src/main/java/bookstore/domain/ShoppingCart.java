@@ -98,7 +98,7 @@ public class ShoppingCart
         // advances as long as there is still room or if the book hasn't been found
         while( i < index && !found )
         {
-            item = ( PurchaseItem )shoppingItems.get( i );
+            item = shoppingItems.get( i );
             if( item.sameAsItem( anItem ) )
                 found = true;
             i++;
@@ -127,7 +127,7 @@ public class ShoppingCart
         int totalItems = shoppingItems.size( );
         while( index < totalItems )
         {
-            PurchaseItem currentItem = ( PurchaseItem )shoppingItems.get( index );
+            PurchaseItem currentItem = shoppingItems.get( index );
             // adds the totals of each purchase item
             total += currentItem.calculateTotalItem( );
             index++;

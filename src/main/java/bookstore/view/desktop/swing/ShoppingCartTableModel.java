@@ -73,20 +73,30 @@ public class ShoppingCartTableModel extends AbstractTableModel
     {
 
         Object datoItem = null;
-        Object[] items = shoppingCart.getShoppingList( ).toArray( );
-        PurchaseItem item = ( PurchaseItem )items[ rowIndex ];
-        Book libroItem = item.getBook( );
+        final Object[] items = shoppingCart.getShoppingList( ).toArray( );
+        PurchaseItem purchaseItem = ( PurchaseItem ) items[ rowIndex ];
+        Book itemBook = purchaseItem.getBook( );
 
         if( columnIndex == -1 )
-            datoItem = item;
+        {
+            datoItem = purchaseItem;
+        }
         else if( columnIndex == 0 )
-            datoItem = libroItem.getISBN( );
+        {
+            datoItem = itemBook.getISBN( );
+        }
         else if( columnIndex == 1 )
-            datoItem = libroItem.getTitle( );
+        {
+            datoItem = itemBook.getTitle( );
+        }
         else if ( columnIndex == 2 )
-        { datoItem = item.getRequestedAmount( ); }
+        {
+            datoItem = purchaseItem.getRequestedAmount( );
+        }
         else if ( columnIndex == 3 )
-            datoItem = giveValueFormatt( item.calculateTotalItem( ) );
+        {
+            datoItem = giveValueFormatt( purchaseItem.calculateTotalItem( ) );
+        }
 
         return datoItem;
     }
