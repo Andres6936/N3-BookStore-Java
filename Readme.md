@@ -1,4 +1,5 @@
 # Description
+-------------
 
 ## Problem Description
 
@@ -14,6 +15,28 @@ able to see the total for each book depending on the price and the amount of
 copies that he's buying and the grand total for everything. The client can change
 his mind and remove items from the shopping cart.
 
-# Interface
+# Interface JavaFX
 
-![GUI](docs/specs/InterfazGUI.jpg)
+![InterfaceJavaFX](docs/screenshots/InterfaceJavaFX.png)
+
+# Interface Swing
+
+![InterfaceSwing](docs/screenshots/InterfaceSwing.png)
+
+# How to run App with Gradle 5.x
+--------------------------------
+
+## Requeriments
+
+- Gradle 5.x
+- Java 8
+
+## Command with Gradle
+
+For run App with support to JavaFX execute:
+    
+    `gradle run --args='-JavaFX'`
+    
+For run App with support to Swing execute:
+
+    `gradle run --args='-Swing'`
