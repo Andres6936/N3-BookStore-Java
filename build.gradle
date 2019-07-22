@@ -7,6 +7,8 @@ plugins {
     // The Application plugin facilitates creating an executable JVM
     // application.
     id 'application'
+    // The JavaFX plugin add support to JavaFX in Java 12
+    id 'org.openjfx.javafxplugin' version '0.0.7'
 }
 
 // The vast majority of Java projects rely on libraries, so managing a
@@ -44,6 +46,12 @@ dependencies {
 application {
     // Configure the application main class.
     mainClassName = 'bookstore.Main'
+}
+
+// Support to JavaFX LTS in Java 12
+javafx {
+    version = "11.0.2"
+    modules = [ 'javafx.controls', 'javafx.fxml' ]
 }
 
 // Executes a Java application in a child process.
