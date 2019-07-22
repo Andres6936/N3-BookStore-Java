@@ -5,6 +5,7 @@ import bookstore.domain.PurchaseItem;
 import bookstore.domain.ShoppingCart;
 
 import javax.swing.table.AbstractTableModel;
+
 import java.text.DecimalFormat;
 import java.text.NumberFormat;
 
@@ -20,12 +21,12 @@ public class ShoppingCartTableModel extends AbstractTableModel
     /**
      * Column titles
      */
-    private String[] columnNames;
+    private static final String[] COLUMN_NAMES = new String[]{ "ISBN", "Title", "Amount", "Subtotal" };
 
     /**
      * the shopping cart
      */
-    private ShoppingCart cart;
+    private ShoppingCart shoppingCart;
 
     // -----------------------------------------------------------------
     // Constructors
@@ -33,14 +34,11 @@ public class ShoppingCartTableModel extends AbstractTableModel
 
     /**
      * Creates the model for the catalog with the information from the store
-     * @param aCart Shopping cart to be displayed. aCart != null.
+     * @param shoppingCart Shopping cart to be displayed. shoppingCart != null.
      */
-    public ShoppingCartTableModel( ShoppingCart aCart )
+    public ShoppingCartTableModel( ShoppingCart shoppingCart )
     {
-        cart = aCart;
-        String[] columnNamesAux = { "ISBN", "Title", "Amount", "Subtotal" };
-        columnNames = columnNamesAux;
-
+        this.shoppingCart = shoppingCart;
     }
 
     // -----------------------------------------------------------------
@@ -53,8 +51,7 @@ public class ShoppingCartTableModel extends AbstractTableModel
      */
     public int getRowCount( )
     {
-        int count = cart.getShoppingList( ).size( );
-        return count;
+        return shoppingCart.getShoppingList( ).size( );
     }
 
     /**
@@ -63,8 +60,7 @@ public class ShoppingCartTableModel extends AbstractTableModel
      */
     public int getColumnCount( )
     {
-        int count = columnNames.length;
-        return count;
+        return COLUMN_NAMES.length;
     }
 
     /**
@@ -77,7 +73,7 @@ public class ShoppingCartTableModel extends AbstractTableModel
     {
 
         Object datoItem = null;
-        Object[] items = cart.getShoppingList( ).toArray( );
+        Object[] items = shoppingCart.getShoppingList( ).toArray( );
         PurchaseItem item = ( PurchaseItem )items[ rowIndex ];
         Book libroItem = item.getBook( );
 
@@ -87,9 +83,9 @@ public class ShoppingCartTableModel extends AbstractTableModel
             datoItem = libroItem.getISBN( );
         else if( columnIndex == 1 )
             datoItem = libroItem.getTitle( );
-        else if( columnIndex == 2 )
-            datoItem = new Integer( item.getRequestedAmount( ) );
-        else if( columnIndex == 3 )
+        else if ( columnIndex == 2 )
+        { datoItem = item.getRequestedAmount( ); }
+        else if ( columnIndex == 3 )
             datoItem = giveValueFormatt( item.calculateTotalItem( ) );
 
         return datoItem;
@@ -102,8 +98,7 @@ public class ShoppingCartTableModel extends AbstractTableModel
      */
     public String getColumnName( int col )
     {
-        String name = columnNames[ col ];
-        return name;
+        return COLUMN_NAMES[ col ];
     }
 
     /**

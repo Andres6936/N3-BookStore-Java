@@ -3,11 +3,24 @@ package bookstore.view.desktop.swing;
 import bookstore.domain.PurchaseItem;
 import bookstore.domain.ShoppingCart;
 
-import javax.swing.*;
+import javax.swing.BorderFactory;
+import javax.swing.JButton;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JTable;
+import javax.swing.JTextField;
+import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
-import java.awt.*;
+
+import java.awt.BorderLayout;
+import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+
 import java.text.DecimalFormat;
 import java.text.NumberFormat;
 
@@ -26,38 +39,25 @@ public class ShoppingCartImagePane extends JPanel implements ActionListener
     // -----------------------------------------------------------------
     // Attributes
     // -----------------------------------------------------------------
+
     /**
      * Shopping cart table model
      */
-    private ShoppingCartTableModel shoppingCart;
+    private ShoppingCartTableModel tableModel;
 
     // -----------------------------------------------------------------
     // GUI Attributes
     // -----------------------------------------------------------------
+
     /**
      * Shopping cart table
      */
     private JTable cartTable;
 
     /**
-     * Drag bar
-     */
-    private JScrollPane dragImagePane;
-
-    /**
-     * Amount label
-     */
-    private JLabel amount;
-
-    /**
      * Amount field
      */
     private JTextField amountField;
-
-    /**
-     * Delete book button
-     */
-    private JButton deleteBookButton;
 
     /**
      * Main GUI
@@ -82,10 +82,12 @@ public class ShoppingCartImagePane extends JPanel implements ActionListener
         setBorder( BorderFactory.createTitledBorder( "Shopping cart details" ) );
 
         // Creates the image pane to display the cart
-        shoppingCart = new ShoppingCartTableModel( aCart );
-        cartTable = new JTable( shoppingCart );
+        tableModel = new ShoppingCartTableModel( aCart );
+        cartTable = new JTable( tableModel );
         cartTable.setPreferredScrollableViewportSize( new Dimension( 475, 100 ) );
-        dragImagePane = new JScrollPane( cartTable );
+
+        // Drag bar
+        JScrollPane dragImagePane = new JScrollPane( cartTable );
 
         add( dragImagePane, BorderLayout.CENTER );
 
@@ -94,9 +96,12 @@ public class ShoppingCartImagePane extends JPanel implements ActionListener
         panelOpciones.setLayout( new GridLayout( 1, 4, 8, 2 ) );
         panelOpciones.setBorder( new EmptyBorder( 5, 5, 5, 5 ) );
 
-        deleteBookButton = new JButton( );
+        // Delete book button
+        JButton deleteBookButton = new JButton( );
         initializeButtons( deleteBookButton, "Delete", ShoppingCartImagePane.DELETE_CAR, Color.black, "Deletes a book from the shopping cart" );
-        amount = new JLabel( "Total" );
+
+        // Amount label
+        JLabel amount = new JLabel( "Total" );
         amount.setHorizontalAlignment( SwingConstants.RIGHT );
         amountField = new JTextField( "" + 0 );
         amountField.setPreferredSize( new Dimension( 100, 20 ) );
@@ -113,29 +118,20 @@ public class ShoppingCartImagePane extends JPanel implements ActionListener
     // -----------------------------------------------------------------
 
     /**
-     * Returns the cart table
-     * @return cart table .cart table. cartTable != null.
-     */
-    public JTable getCartTable( )
-    {
-        return cartTable;
-    }
-
-    /**
      * Updates the information displayed on the kart
      */
     public void updateCart( )
     {
-        shoppingCart.fireTableDataChanged( );
+        tableModel.fireTableDataChanged( );
     }
 
     /**
      * Responds to the events produced by the user
-     * @param evento Event produced by the user. event != null.
+     * @param event Event produced by the user. event != null.
      */
-    public void actionPerformed( ActionEvent evento )
+    public void actionPerformed( ActionEvent event )
     {
-        String actionCommand = evento.getActionCommand( );
+        String actionCommand = event.getActionCommand( );
 
         // Delete cart button
         if( actionCommand.equals( ShoppingCartImagePane.DELETE_CAR ) )
@@ -159,7 +155,6 @@ public class ShoppingCartImagePane extends JPanel implements ActionListener
             catch( Exception e2 )
             {
                 JOptionPane.showMessageDialog( this, "you must first select an item in order to delete", "Book purchase", JOptionPane.WARNING_MESSAGE );
-                return;
             }
         }
 
